@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Cliente implements Serializable {
@@ -26,8 +27,8 @@ public class Cliente implements Serializable {
     @NotBlank(message = "Preencha o CNPJ")
     private String cnpj;
 
-    @NotBlank(message = "Preencha a data corretamente utilizando este formato xx/xx/xxxx")
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @NotNull(message = "Preencha a data no formato: DD/MM/AAAA")
     private Date dataCadastro;
 
     @NotBlank(message = "Preencha o Endereço")
