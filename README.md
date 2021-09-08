@@ -53,5 +53,7 @@ PORTA POSTGRESQL 5433
 Aplicaton.properties da Api
 
 spring.datasource.url=jdbc:postgresql://localhost:5433/ClienteTestDB
+
 spring.datasource.username=postgres
+
 spring.datasource.password=123
