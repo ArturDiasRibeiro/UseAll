@@ -22,7 +22,7 @@ public class UseallApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Cliente cli1 = new Cliente("Artur", "123123123", sdf.parse("06/09/2021"), "endereço", "9999-5555");
+        Cliente cli1 = new Cliente("Artur Dias Ribeiro", "123.456.789-00", sdf.parse("06/09/2021"), "endereço", "(54)99663-0228");
         clienteRepository.save(cli1);
     }
     

@@ -18,7 +18,7 @@ public class ClienteService {
     //FIND ONE BY ID
     public Cliente find(Integer id) {
         Optional<Cliente> obj = clienteRepository.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente com ID: "+ id +", Não foi encontrado no banco de dados."));
     }
 
     //FIND ALL
@@ -49,7 +49,7 @@ public class ClienteService {
         try {
             clienteRepository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
-            throw new DataIntegrityViolationException("Não é possível excluir um cliente que possui uma ordem de servico", e);
+            throw new DataIntegrityViolationException("Não é possível excluir o cliente", e);
         }
     }
 
